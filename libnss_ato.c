@@ -105,7 +105,9 @@ _nss_ato_getpwnam_r( const char *name,
 	}
 
 	int len = strlen(BAD_CHARS);
-	for (int i=0; i<len; i++) {
+
+	int i;
+	for (i=0; i<len; i++) {
 		if (strchr(name, BAD_CHARS[i]) != NULL) {
 			return NSS_STATUS_NOTFOUND;
 		}
